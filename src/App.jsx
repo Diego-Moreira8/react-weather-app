@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CityInput from "./CityInput";
 import styled from "styled-components";
+import CityName from "./CityName";
 
 const Body = styled.div`
   font-family: sans-serif;
@@ -23,6 +24,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       try {
+        setData(null);
         setLoading(true);
 
         const response = await fetch(
@@ -61,9 +63,10 @@ export default function App() {
         </header>
 
         <main>
-          {data && <h1>{data.name}</h1>}
           {loading && <div>Carregando...</div>}
           {error && <div>{`Houve um problema ao buscar os dados.`}</div>}
+
+          {data && <CityName name={data.name} />}
           {data && <div>{data.main.temp}º</div>}
         </main>
       </Content>
