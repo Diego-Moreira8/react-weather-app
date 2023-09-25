@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
 import CityInput from "./CityInput";
+import styled from "styled-components";
+
+const Body = styled.div`
+  font-family: sans-serif;
+  min-height: 99vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+`;
+
+const Content = styled.div`
+  margin: 1rem;
+`;
 
 export default function App() {
   const [city, setCity] = useState("catalao");
@@ -41,18 +54,21 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h1>Weather</h1>
+    <Body>
+      <Content>
+        <header>
+          <CityInput handleSubmit={handleSubmit} />
+        </header>
 
-      <CityInput handleSubmit={handleSubmit} />
-      <hr />
-      {loading && <div>Carregando</div>}
-      {error && <div>{`Houve um problema ao buscar os dados.`}</div>}
-      {data && (
-        <div>
-          {data.name}: {data.main.temp}º
-        </div>
-      )}
-    </div>
+        <main>
+          {data && <h1>{data.name}</h1>}
+          {loading && <div>Carregando...</div>}
+          {error && <div>{`Houve um problema ao buscar os dados.`}</div>}
+          {data && <div>{data.main.temp}º</div>}
+        </main>
+      </Content>
+
+      <footer>Diego Moreira</footer>
+    </Body>
   );
 }
