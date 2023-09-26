@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import CityInput from "./CityInput";
 import styled from "styled-components";
 import Thermometer from "./Thermometer";
+import Footer from "./Footer";
 
 const Body = styled.div`
   font-family: sans-serif;
-  min-height: 99vh;
+  min-height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
 `;
 
 const Content = styled.div`
-  margin: 1rem;
+  max-width: 500px;
+  margin: 1rem auto;
 `;
 
 export default function App() {
@@ -69,7 +71,7 @@ export default function App() {
         </main>
       </Content>
 
-      <footer>Diego Moreira</footer>
+      <Footer />
     </Body>
   );
 }

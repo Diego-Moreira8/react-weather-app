@@ -2,6 +2,10 @@ import styled from "styled-components";
 import CityName from "./CityName";
 import CurrentTemp from "./CurrentTemp";
 
+const StyledThermometer = styled.div`
+  margin: 1rem;
+`;
+
 const TempWrapper = styled.div`
   margin: 1rem;
   display: flex;
@@ -33,7 +37,7 @@ export default function Thermometer({ data }) {
   };
 
   return (
-    <div>
+    <StyledThermometer>
       <CityName name={data.name} />
 
       <TempWrapper>
@@ -46,6 +50,6 @@ export default function Thermometer({ data }) {
           <div>Mínima: {temp.min}º</div>
         </Temperatures>
       </TempWrapper>
-    </div>
+    </StyledThermometer>
   );
 }

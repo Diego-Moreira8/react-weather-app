@@ -7,7 +7,7 @@ const StyledForm = styled.form`
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 1rem;
 `;
 
 const Label = styled.label`
