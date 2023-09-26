@@ -15,6 +15,7 @@ const TempWrapper = styled.div`
 const TempBar = styled.div`
   width: 1.5rem;
   height: 300px;
+  box-shadow: inset 0px 0px 4px 0px #0000009a;
   border-radius: 1rem;
   background: linear-gradient(
     rgba(255, 43, 0, 1) 0%,

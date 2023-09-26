@@ -3,6 +3,7 @@ import CityInput from "./CityInput";
 import styled from "styled-components";
 import Thermometer from "./Thermometer";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 const Body = styled.div`
   font-family: sans-serif;
@@ -64,9 +65,8 @@ export default function App() {
         </header>
 
         <main>
-          {/* {loading && <div>Carregando...</div>}
-          {error && <div>{`Houve um problema ao buscar os dados.`}</div>} */}
-
+          {loading && <Loading />}
+          {/* {error && <div>{`Houve um problema ao buscar os dados.`}</div>} */}
           {data && <Thermometer data={data} />}
         </main>
       </Content>
