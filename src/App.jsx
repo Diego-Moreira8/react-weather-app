@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import CityInput from "./CityInput";
+import CityInput from "./Components/CityInput";
 import styled from "styled-components";
-import Thermometer from "./Thermometer";
-import Footer from "./Footer";
-import Loading from "./Loading";
-import ErrorScreen from "./ErrorScreen";
+import Thermometer from "./Components/Thermometer";
+import Footer from "./Components/Footer";
+import Loading from "./Components/Loading";
+import ErrorScreen from "./Components/ErrorScreen";
 
 const Body = styled.div`
   font-family: sans-serif;
