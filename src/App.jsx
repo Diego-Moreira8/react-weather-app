@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Thermometer from "./Thermometer";
 import Footer from "./Footer";
 import Loading from "./Loading";
+import ErrorScreen from "./ErrorScreen";
 
 const Body = styled.div`
   font-family: sans-serif;
@@ -27,6 +28,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       try {
+        setError(null);
         setData(null);
         setLoading(true);
 
@@ -66,7 +68,7 @@ export default function App() {
 
         <main>
           {loading && <Loading />}
-          {/* {error && <div>{`Houve um problema ao buscar os dados.`}</div>} */}
+          {error && <ErrorScreen />}
           {data && <Thermometer data={data} />}
         </main>
       </Content>
