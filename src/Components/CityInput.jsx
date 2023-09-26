@@ -62,7 +62,7 @@ export default function CityInput({ handleSubmit }) {
         type="text"
         name="city"
         id="city"
-        placeholder="Ex.: sao paulo"
+        placeholder="Ex.: São Paulo"
       />
       <Button type="submit">🔎</Button>
     </StyledForm>

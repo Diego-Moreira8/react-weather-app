@@ -20,7 +20,7 @@ const Content = styled.div`
 `;
 
 export default function App() {
-  const [city, setCity] = useState("rio de janeiro");
+  const [city, setCity] = useState("São Paulo");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
