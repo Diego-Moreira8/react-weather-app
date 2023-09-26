@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CityInput from "./CityInput";
 import styled from "styled-components";
-import CityName from "./CityName";
+import Thermometer from "./Thermometer";
 
 const Body = styled.div`
   font-family: sans-serif;
@@ -16,7 +16,7 @@ const Content = styled.div`
 `;
 
 export default function App() {
-  const [city, setCity] = useState("catalao");
+  const [city, setCity] = useState("rio de janeiro");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -43,7 +43,6 @@ export default function App() {
         setData(null);
       } finally {
         setLoading(false);
-        console.log(data);
       }
     }
 
@@ -63,11 +62,10 @@ export default function App() {
         </header>
 
         <main>
-          {loading && <div>Carregando...</div>}
-          {error && <div>{`Houve um problema ao buscar os dados.`}</div>}
+          {/* {loading && <div>Carregando...</div>}
+          {error && <div>{`Houve um problema ao buscar os dados.`}</div>} */}
 
-          {data && <CityName name={data.name} />}
-          {data && <div>{data.main.temp}º</div>}
+          {data && <Thermometer data={data} />}
         </main>
       </Content>
 
